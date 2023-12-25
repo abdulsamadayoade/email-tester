@@ -23,7 +23,7 @@ import {
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
-  const iframeRef = useRef(null);
+  const iframeRef = useRef<any>(null);
   const { html, updateHtml } = useAppContext();
 
   const FormSchema = z.object({
