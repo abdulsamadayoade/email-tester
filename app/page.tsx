@@ -4,6 +4,7 @@ import { useAppContext } from "@/store/store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -50,11 +51,9 @@ export default function Home() {
         method: "POST",
         body: JSON.stringify(paylaod),
       });
-      console.log(res);
-      alert("Email sent!");
+      toast.success("Email sent.");
     } catch (error) {
-      console.log(error);
-      alert("Error sending email.");
+      toast.error("Error sending email.");
     } finally {
       setLoading(false);
     }
