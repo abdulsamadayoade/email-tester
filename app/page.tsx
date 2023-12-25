@@ -112,7 +112,7 @@ export default function Home() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="px-5 lg:px-8">
+            <Button disabled={loading} type="submit" className="px-5 lg:px-8">
               {loading ? "Sending..." : "Submit"}
             </Button>
           </form>
