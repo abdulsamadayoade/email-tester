@@ -11,19 +11,11 @@ export async function POST(req: Request) {
   const dt: Payload = await req.json();
 
   if (!dt.email) {
-    // return {
-    //   status: 400,
-    //   body: { error: "Email is required" },
-    // };
-    return Response.json({ error: "Email is required" });
+    return Response.json({ error: "Email is required", status: 400 });
   }
 
   if (!dt.html) {
-    // return {
-    //   status: 400,
-    //   body: { error: "HTML is required" },
-    // };
-    return Response.json({ error: "HTML is required" });
+    return Response.json({ error: "HTML is required", status: 400 });
   }
 
   try {
